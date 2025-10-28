@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Timetable</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body data-page="teacher-page">
+    <a href="/logout" class="btn btn-secondary btn-lg">Logout</a>
+    <div class="teachers-timetable">
+        <h2 class="teacher-heading">Your Timetable</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-id="<%= teacher._id %>">
+                    <td><%= teacher.name %></td>
+                    <td><%= teacher.email %></td>
+                    <td>
+                    <% if (teacher.course && teacher.course.length > 0) { %>
+                        <% teacher.course.forEach(course => { %>
+                        <span><%= course.name %></span><br>
+                        <% }) %>
+                    <% } else { %>
+                        <span>No course</span>
+                    <% } %>
+                    </td>  
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+</body>
+</html>

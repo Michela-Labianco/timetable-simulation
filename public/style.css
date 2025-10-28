@@ -1,0 +1,138 @@
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: sans-serif;
+    letter-spacing: 0.5rem;
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    max-width: 1600px;
+    height: 100vh;
+    background: #a6a5a5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem; /* space between columns */
+}
+.logo-container{
+    width: 32%;
+}
+.logo-img{
+    width: 100%;
+    margin-bottom: 5rem;
+}
+.forms-container{
+    width: 40%;
+    height: 40%;
+    border: 0.1rem solid #fff;
+    margin-bottom: 5rem;
+    background-color: #fff;
+    padding: 1rem;
+}
+.input-group-text{
+    padding: 1rem;
+}
+.table-primary, .teacher-list, .student-list{
+    height: 3rem;
+}
+.fa-plus{
+    font-size: 1.5rem;
+}
+.login-btn, .register-btn{
+    width: 100%;
+    height: 3rem;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    background: #b7b7b7;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.login-btn:hover, .register-btn:hover{
+    background: #747474;
+}
+
+.timetables-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+    width: 100%;
+    height: 140vh;
+    padding: 1rem;
+}
+
+.teachers-timetable, .students-timetable, .course-timetable{
+    width: 70%;
+}
+
+.teacher-heading, .student-heading{
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.btn-secondary{
+    position: absolute;
+    top: 2rem;
+    width: auto;
+    height: 3rem;
+    border-radius: 0.3rem;
+}
+
+button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.modal-content{
+    width: 50rem;
+    height: 25rem;
+    font-size: 1.5rem;
+}
+.form-group{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.form-group label{
+    margin-bottom: 2rem;
+}
+.form-group input{
+    height: 3rem;
+    font-size: 1.5rem;
+}
+.modal-title, .modal-name{
+    font-size: 1.8rem;
+}
+.modal-header, .modal-footer{
+    border-bottom: none;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal-footer{
+    display: flex;
+    justify-content: center;
+}
+.btn-modal {
+    text-align: center;
+    top: 18rem; 
+    width: 12rem;
+    height: 4rem;
+    border-radius: 0.3rem;
+    font-size: 1.5rem;
+}

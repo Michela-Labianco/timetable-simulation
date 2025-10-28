@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+</head>
+<body data-page="login-reg">
+    <section class="container">
+        <div class="logo-container">
+            <img class="logo-img" src="/logo.jpg" alt="logo">
+        </div>
+        <div class="forms-container">
+            <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="sign-in-tab" data-bs-toggle="tab" href="#sign-in" role="tab" aria-controls="sign-in" aria-selected="true">Sign In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="register-tab" data-bs-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Register</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="sign-in" role="tabpanel" aria-labelledby="sign-in-tab">
+                <form class="sign-in-form" action="/login" method="POST">
+                    <div class="input-group mb-5 mt-5">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user"></i></span>
+                    </div>
+                    <input type="email" name="email" class="form-control email-login" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required>
+                    </div>
+
+                    <div class="input-group mb-5">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></i></span>
+                    </div>
+                    <!-- name attributes so the data can be sent in the req.body -->
+                    <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                    </div>
+                    <button type="submit" class="login-btn">Log in</button>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                <form class="register-form" action="/register" method="POST">
+                    <div class="input-group mb-5 mt-5">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
+                    </div>
+                    <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="input-group mb-5">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></i></span>
+                    </div>
+                    <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="input-group mb-5">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></i></span>
+                    </div>
+                    <!-- so here same -> make sure the field has name="confirmPassword" so it submits correctly -->
+                    <input type="password" name="confirmPassword" class="form-control" placeholder="Re-enter password" aria-label="Password" aria-describedby="basic-addon1" required>
+                    </div>
+                    <button type="submit" class="register-btn">Register</button>
+                    <!-- The browser doesn't actually send the form the normal way,
+                    because JavaScript takes control and sends it via fetch() instead. 
+                    User clicks the submit button, the browser triggers the submit event on the form,
+                    JS listens for that event and calls e.preventDefault() to stop the browser from sending the form.
+                    The it sends the form data via fetch() to the backend. -->
+                </form>
+                <!-- moved outside the form so it always shows on page -->
+                <% if (message) { %>
+                    <div class="alert alert-success"><%= message %></div>
+                <% } %>
+            </div>
+        </div>       
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+</body>
+</html>
